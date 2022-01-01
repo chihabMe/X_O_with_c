@@ -22,7 +22,7 @@ void fillTheList(char matrix[C_SIZE][R_SIZE]){
 
 
 }
-void printGame(char matrix[C_SIZE][R_SIZE]){
+void printTheGame(char matrix[C_SIZE][R_SIZE]){
 	
 	for (int i = 0; i <= C_SIZE-1; ++i){
 			printf("----------------\n");
@@ -53,7 +53,7 @@ int checkForWin(char matrix[C_SIZE][R_SIZE],char player){
 
 	for(int i =0;i<=C_SIZE-1;i++){
 	if(player == matrix[i][1] && player == matrix[i][1] &&player == matrix[i][2] ){
-		printf("%c i the winner",player);
+		printf("%c is the winner",player);
 		return 1;
 	}
 	}
@@ -74,7 +74,7 @@ int checkForWin(char matrix[C_SIZE][R_SIZE],char player){
 		return 1;	
 	}
 	return 0;
-	/*win combanations
+	/*winning combinations
 
 
 	[	[0 0 0]
@@ -108,7 +108,7 @@ void play(char player,int place,char matrix[C_SIZE][R_SIZE]){
 					}
 						if(matrix[i][j]!='O' && matrix[i][j]!='X'  ){
 						matrix[i][j]=player;
-						printGame(matrix);							
+						printTheGame(matrix);							
 						win = checkForWin(matrix,player);
 						}
 
@@ -124,23 +124,23 @@ int main(int argc, char const *argv[])
 	char m[C_SIZE][R_SIZE];
 	char temp;
 	int k=0;
-	int start =0;
+	int turn =0;
 	//filling the list 
 
 	int place;
 	fillTheList(m);
-	printGame(m);
+	printTheGame(m);
 	while(!win){
-	if(start==0){
-		printf("put O in =>");
+	if(turn==0){
+		printf(" O in =>");
 		scanf("%d",&place);
 		play('O',place,m);
-		start=1;
+		turn=1;
 	}else{
-		printf("put X in =>");
+		printf(" X in =>");
 		scanf("%d",&place);
 		play('X',place,m);
-		start=0;
+		turn=0;
 
 	}}
 }
