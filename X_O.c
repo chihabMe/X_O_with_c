@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+//chihab
 const int R_SIZE=3;
 const int C_SIZE=3;
 const char list[9]  = {  '0' , '1','2','3','4','5','6','7','8'};
