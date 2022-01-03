@@ -52,7 +52,7 @@ void printTheGame(char matrix[C_SIZE][R_SIZE]){
 int checkForWin(char matrix[C_SIZE][R_SIZE],char player){
 
 	for(int i =0;i<=C_SIZE-1;i++){
-	if(player == matrix[i][1] && player == matrix[i][1] &&player == matrix[i][2] ){
+	if(player == matrix[i][0] && player == matrix[i][1] &&player == matrix[i][2] ){
 		printf("%c is the winner",player);
 		return 1;
 	}
